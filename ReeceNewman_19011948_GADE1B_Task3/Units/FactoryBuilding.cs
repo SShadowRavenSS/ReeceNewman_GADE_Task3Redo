@@ -13,12 +13,7 @@ namespace Buildings
         private string unitType;
         Random rng = new Random();
 
-        public int XPos { get => base.xPos; set => base.xPos = value; }
-        public int YPos { get => base.yPos; set => base.yPos = value; }
-        public int Health { get => base.health; set => base.health = value; }
-        public int MaxHealth { get => base.maxHealth; }
-        public int Faction { get => base.faction; }
-        public char Symbol { get => base.symbol; }
+       
 
         //Constructor for factorybuilding class
         public FactoryBuilding(int xPos, int yPos, int health, int faction, char symbol, string unitType, bool bottomMap) : base(xPos, yPos, health, faction, symbol)

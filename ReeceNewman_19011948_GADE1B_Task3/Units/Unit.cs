@@ -168,6 +168,54 @@ namespace Units
 
         }
 
+        //returns the closest unit to the current unit
+        public Buildings.Building closestUnit(Buildings.Building[] bldng)
+        {
+            int lowestDist = int.MaxValue;
+            int closestUnit = int.MaxValue;
+            int thisUnit = 0;
+
+            //runs a loop through all the units in the array
+            for (int k = 0; k < bldng.Length; k++)
+            {
+                //checks that the unit is not dead
+                if (bldng[k].Death() == false)
+                {
+                    //determines the distance of the unit
+                    
+
+                    int dist = Math.Abs(bldng[k].XPos - this.XPos) + Math.Abs(bldng[k].YPos - this.YPos);
+
+                    if (dist != 0) //checks if the unit it is checking is not itself
+                    {
+                        //checks if the unit is closer than any other previous unit and if so saves that units index and distance
+                        if (dist < lowestDist && bldng[k].Faction != this.Faction)
+                        {
+                            lowestDist = dist;
+                            closestUnit = k;
+                        }
+
+                    }
+                    else
+                    {
+                        thisUnit = k;
+                    }
+
+                }
+
+            }
+            //check to ensure integrety of code by returning either this unit or the closest unit determined
+            if (closestUnit != int.MaxValue)
+            {
+                return bldng[closestUnit];
+            }
+            else
+            {
+                return bldng[thisUnit];
+            }
+
+        }
+
         //Method that attacks the passed in unit
         public void combat(Unit unitToAttack)
         {

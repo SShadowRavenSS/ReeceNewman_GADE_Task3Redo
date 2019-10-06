@@ -31,5 +31,12 @@ namespace Buildings
         abstract public bool Death();
         abstract public override string ToString();
 
+        public int XPos { get => xPos; set => xPos = value; }
+        public int YPos { get => yPos; set => yPos = value; }
+        public int Health { get => health; set => health = value; }
+        public int MaxHealth { get => maxHealth; }
+        public int Faction { get => faction; }
+        public char Symbol { get => symbol; }
+
     }
 }
