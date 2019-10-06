@@ -36,18 +36,42 @@ namespace Units
                 if (unit[i].IsDead == false) //If unit is not dead
                 {
                     Unit closest = unit[i].closestUnit(unit); //Determines the closest unit to this unit and stores that unit in 'closest'
+                    Buildings.Building closestBuilding = unit[i].closestUnit(bldings); //Determines the closest unit to this unit and stores that unit in 'closestBuilding'
 
-                    if (unit[i].attackingRange(closest) == false || unit[i].Health / unit[i].MaxHealth * 100 < 25) //If the unit is below 25% hp or is not in range of the closest enemy 
-                    {
-                        unit[i].movement(closest, map.MapSizeX, map.MapSizeY); //Move
+                    int unitDist = Math.Abs(unit[i].XPos - closest.XPos) + Math.Abs(unit[i].YPos - closest.YPos); //Determines distance between the current unit and the closest unit
+                    int buildDist = Math.Abs(unit[i].XPos - closestBuilding.XPos) + Math.Abs(unit[i].YPos - closestBuilding.YPos); //Determines distance between the current unit and the closest Building
 
-                        map.populateMap(); //Refresh Map
-                    }
-                    else if (unit[i].Faction != closest.Faction) //If the unit is not part of the same team
+                    //Check to see if the unit or the building is closer
+                    if (unitDist > buildDist)
                     {
-                        unit[i].combat(closest); //Do combat
-                        map.populateMap(); //Refreh map
+                        if (unit[i].attackingRange(closestBuilding) == false || unit[i].Health / unit[i].MaxHealth * 100 < 25) //If the unit is below 25% hp or is not in range of the closest enemy 
+                        {
+                            unit[i].movement(closestBuilding, map.MapSizeX, map.MapSizeY); //Move
+
+                            map.populateMap(); //Refresh Map
+                        }
+                        else if (unit[i].Faction != closestBuilding.Faction) //If the unit is not part of the same team
+                        {
+                            unit[i].combat(closestBuilding); //Do combat
+                            map.populateMap(); //Refreh map
+                        }
                     }
+                    else
+                    {
+                        if (unit[i].attackingRange(closest) == false || unit[i].Health / unit[i].MaxHealth * 100 < 25) //If the unit is below 25% hp or is not in range of the closest enemy 
+                        {
+                            unit[i].movement(closest, map.MapSizeX, map.MapSizeY); //Move
+
+                            map.populateMap(); //Refresh Map
+                        }
+                        else if (unit[i].Faction != closest.Faction) //If the unit is not part of the same team
+                        {
+                            unit[i].combat(closest); //Do combat
+                            map.populateMap(); //Refreh map
+                        }
+                    }
+
+                    
 
                 }
 

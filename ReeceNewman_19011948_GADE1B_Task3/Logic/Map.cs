@@ -94,6 +94,7 @@ namespace Units
                     {
                         FactoryBuilding blding = new FactoryBuilding(xPos, yPos, 100, faction, 'F', "RangedUnit",true);
                         buildings[k] = blding;
+                        
                     }
                     else
                     {
