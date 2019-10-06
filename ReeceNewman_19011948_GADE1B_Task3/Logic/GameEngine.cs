@@ -14,10 +14,10 @@ namespace Units
         public Map Map { get => map; }
         
         //Constructor for gameEngine
-        public GameEngine(int numberOfUnits)
+        public GameEngine(int numberOfUnits, int mapSizeX, int mapSizeY, int numOfBuildings)
         {
             //Creates new map and generates new battlefield
-            map = new Map(numberOfUnits, 20, 20, 6);
+            map = new Map(numberOfUnits,mapSizeX,mapSizeY,numOfBuildings);
             map.newBattlefield();
             
         } 
