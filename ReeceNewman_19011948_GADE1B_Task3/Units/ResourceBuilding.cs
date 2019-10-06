@@ -13,13 +13,7 @@ namespace Buildings
         private string type;
         private int resourcePoolRemaining, generatedResources, resourcesPerRound, maxPool;
 
-        //Accessors
-        public int XPos { get => base.xPos; set => base.xPos = value; }
-        public int YPos { get => base.yPos; set => base.yPos = value; }
-        public int Health { get => base.health; set => base.health = value; }
-        public int MaxHealth { get => base.maxHealth; }
-        public int Faction { get => base.faction; }
-        public char Symbol { get => base.symbol; }
+        
 
         //Constructor for resourcebuilding class
         public ResourceBuilding(int xPos, int yPos, int health, int faction, char symbol, int maxPool, int production) : base(xPos, yPos, health, faction, symbol)

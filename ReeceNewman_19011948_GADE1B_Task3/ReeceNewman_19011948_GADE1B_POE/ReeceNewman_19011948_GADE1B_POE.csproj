@@ -81,10 +81,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Buildings\Buildings.csproj">
-      <Project>{976f692b-fd26-4166-9afb-d3f07740186a}</Project>
-      <Name>Buildings</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{5af9b12d-b35d-4084-853b-f48273eb1a69}</Project>
       <Name>Logic</Name>

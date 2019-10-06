@@ -18,3 +18,12 @@ E:\Work\Vega\Game Development\Semester 2\POE\ReeceNewman_19011948_GADE1B_Task2\L
 E:\Work\Vega\Game Development\Semester 2\POE\ReeceNewman_19011948_GADE1B_Task2\Logic\bin\Debug\Buildings.pdb
 E:\Work\Vega\Game Development\Semester 2\POE\ReeceNewman_19011948_GADE1B_Task2\Logic\bin\Debug\Units.pdb
 E:\Work\Vega\Game Development\Semester 2\POE\ReeceNewman_19011948_GADE1B_Task2\Logic\obj\Debug\Logic.csproj.CopyComplete
+E:\Work\Vega\Game Development\Semester 2\POE\repos\Task3\ReeceNewman_GADE_Task3\ReeceNewman_19011948_GADE1B_Task3\Logic\bin\Debug\Logic.dll
+E:\Work\Vega\Game Development\Semester 2\POE\repos\Task3\ReeceNewman_GADE_Task3\ReeceNewman_19011948_GADE1B_Task3\Logic\bin\Debug\Logic.pdb
+E:\Work\Vega\Game Development\Semester 2\POE\repos\Task3\ReeceNewman_GADE_Task3\ReeceNewman_19011948_GADE1B_Task3\Logic\bin\Debug\Units.dll
+E:\Work\Vega\Game Development\Semester 2\POE\repos\Task3\ReeceNewman_GADE_Task3\ReeceNewman_19011948_GADE1B_Task3\Logic\bin\Debug\Units.pdb
+E:\Work\Vega\Game Development\Semester 2\POE\repos\Task3\ReeceNewman_GADE_Task3\ReeceNewman_19011948_GADE1B_Task3\Logic\obj\Debug\Logic.csprojAssemblyReference.cache
+E:\Work\Vega\Game Development\Semester 2\POE\repos\Task3\ReeceNewman_GADE_Task3\ReeceNewman_19011948_GADE1B_Task3\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
+E:\Work\Vega\Game Development\Semester 2\POE\repos\Task3\ReeceNewman_GADE_Task3\ReeceNewman_19011948_GADE1B_Task3\Logic\obj\Debug\Logic.csproj.CopyComplete
+E:\Work\Vega\Game Development\Semester 2\POE\repos\Task3\ReeceNewman_GADE_Task3\ReeceNewman_19011948_GADE1B_Task3\Logic\obj\Debug\Logic.dll
+E:\Work\Vega\Game Development\Semester 2\POE\repos\Task3\ReeceNewman_GADE_Task3\ReeceNewman_19011948_GADE1B_Task3\Logic\obj\Debug\Logic.pdb
