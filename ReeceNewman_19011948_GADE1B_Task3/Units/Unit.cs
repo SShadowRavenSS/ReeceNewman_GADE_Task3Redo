@@ -76,6 +76,52 @@ namespace Units
             return isInRange;
         }
 
+        //Overloaded attackingRange Method for buildings
+        public bool attackingRange(Buildings.Building bldng)
+        {
+
+            bool isInRange = false;
+            
+            //Typecheck
+            string type = bldng.GetType().ToString();
+            string[] typeArr = type.Split('.');
+            type = typeArr[typeArr.Length - 1];
+
+            if(type == "FactoryBuilding")
+            {
+                //Creates temp FactoryBuilding
+                Buildings.FactoryBuilding fBuilding = (Buildings.FactoryBuilding)bldng;
+                //Checks if the distance is greater than the attack range and then sets relevant boolean
+                if (Math.Abs(fBuilding.XPos - this.XPos) > this.AttackRange && Math.Abs(fBuilding.YPos - this.YPos) > this.AttackRange)
+                {
+                    isInRange = false;
+                }
+                else
+                {
+                    isInRange = true;
+                }
+            }
+            else
+            {
+                //Creates temp resourceBuilding
+                Buildings.ResourceBuilding rBuilding = (Buildings.ResourceBuilding)bldng;
+                //Checks if the distance is greater than the attack range and then sets relevant boolean
+                if (Math.Abs(rBuilding.XPos - this.XPos) > this.AttackRange && Math.Abs(rBuilding.YPos - this.YPos) > this.AttackRange)
+                {
+                    isInRange = false;
+                }
+                else
+                {
+                    isInRange = true;
+                }
+            }
+
+            
+
+            //returns boolean
+            return isInRange;
+        }
+
         //returns the closest unit to the current unit
         public Unit closestUnit(Unit[] units)
         {
