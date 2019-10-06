@@ -225,6 +225,15 @@ namespace Units
 
         }
 
+        //Method that attacks the passed in Building
+        public void combat(Buildings.Building unitToAttack)
+        {
+            //subtracts health equal to this units attack
+            unitToAttack.Health -= this.Attack;
+            this.IsAttacking = true;
+
+        }
+
         //method that checks for death
         public void death()
         {  
