@@ -250,7 +250,7 @@ namespace Units
         }
 
         //Method that moves unit towards passed in unit
-        public void movement(Unit moveToUnit, int mapSizeX, int mapSizeY)
+        public virtual void movement(Unit moveToUnit, int mapSizeX, int mapSizeY)
         {
             this.IsAttacking = false; //Since this unit is moving it is not attacking so set relevant boolean false
             double currentHealth = this.health;
@@ -374,7 +374,7 @@ namespace Units
         }
 
         //Method that moves unit towards passed in building
-        public void movement(Buildings.Building moveToUnit, int mapSizeX, int mapSizeY)
+        public virtual void movement(Buildings.Building moveToUnit, int mapSizeX, int mapSizeY)
         {
             this.IsAttacking = false; //Since this unit is moving it is not attacking so set relevant boolean false
             double currentHealth = this.health;
