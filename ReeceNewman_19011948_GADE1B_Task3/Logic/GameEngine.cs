@@ -42,24 +42,10 @@ namespace Units
                     int unitDist = Math.Abs(unit[i].XPos - closest.XPos) + Math.Abs(unit[i].YPos - closest.YPos); //Determines distance between the current unit and the closest unit
                     int buildDist = Math.Abs(unit[i].XPos - closestBuilding.XPos) + Math.Abs(unit[i].YPos - closestBuilding.YPos); //Determines distance between the current unit and the closest Building
 
-                    //Check to see if the unit or the building is closer
-                    if (unitDist > buildDist)
+                    //Check to see if the unit is a wizard
+                    if(unit[i].Name == "Wizard")
                     {
-                        if (unit[i].attackingRange(closestBuilding) == false || unit[i].Health / unit[i].MaxHealth * 100 < 25) //If the unit is below 25% hp or is not in range of the closest enemy 
-                        {
-                            unit[i].movement(closestBuilding, map.MapSizeX, map.MapSizeY); //Move
-
-                            map.populateMap(); //Refresh Map
-                        }
-                        else if (unit[i].Faction != closestBuilding.Faction) //If the unit is not part of the same team
-                        {
-                            unit[i].combat(closestBuilding); //Do combat
-                            map.populateMap(); //Refreh map
-                        }
-                    }
-                    else
-                    {
-                        if (unit[i].attackingRange(closest) == false || unit[i].Health / unit[i].MaxHealth * 100 < 25) //If the unit is below 25% hp or is not in range of the closest enemy 
+                        if (unit[i].attackingRange(closest) == false || unit[i].Health / unit[i].MaxHealth * 100 < 50) //If the unit is below 50% hp or is not in range of the closest enemy 
                         {
                             unit[i].movement(closest, map.MapSizeX, map.MapSizeY); //Move
 
@@ -71,12 +57,41 @@ namespace Units
                             map.populateMap(); //Refreh map
                         }
                     }
+                    else
+                    {
+                        //Check to see if the unit or the building is closer
+                        if (unitDist > buildDist)
+                        {
+                            if (unit[i].attackingRange(closestBuilding) == false || unit[i].Health / unit[i].MaxHealth * 100 < 25) //If the unit is below 25% hp or is not in range of the closest enemy 
+                            {
+                                unit[i].movement(closestBuilding, map.MapSizeX, map.MapSizeY); //Move
 
-                    
+                                map.populateMap(); //Refresh Map
+                            }
+                            else if (unit[i].Faction != closestBuilding.Faction) //If the unit is not part of the same team
+                            {
+                                unit[i].combat(closestBuilding); //Do combat
+                                map.populateMap(); //Refreh map
+                            }
+                        }
+                        else
+                        {
+                            if (unit[i].attackingRange(closest) == false || unit[i].Health / unit[i].MaxHealth * 100 < 25) //If the unit is below 25% hp or is not in range of the closest enemy 
+                            {
+                                unit[i].movement(closest, map.MapSizeX, map.MapSizeY); //Move
+
+                                map.populateMap(); //Refresh Map
+                            }
+                            else if (unit[i].Faction != closest.Faction) //If the unit is not part of the same team
+                            {
+                                unit[i].combat(closest); //Do combat
+                                map.populateMap(); //Refreh map
+                            }
+                        }
+                    }
 
                 }
-
-                
+   
             }
 
             //loop that runs through all the buildings 

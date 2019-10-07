@@ -51,8 +51,8 @@ namespace Units
                 //randoms values for unit creation
                 xPos = Rng.Next(0, mapSizeX);
                 yPos = Rng.Next(0, mapSizeY);
-                type = Rng.Next(0, 2);
-                faction = Rng.Next(0, 2);
+                type = Rng.Next(0, 3);
+                faction = Rng.Next(0, 3);
                 
                 //creates units based on their randomed values and saves them in relevant array
                 if (type == 0 && faction == 0)
@@ -73,6 +73,21 @@ namespace Units
                 else if(type == 1 && faction == 1)
                 {
                     RangedUnit unit = new RangedUnit(xPos, yPos, 100, 1, 2, 'r', 5, faction,100, "Archer");
+                    Units[l] = unit;
+                }
+                else if(type == 2 && faction == 0)
+                {
+                    WizardUnit unit = new WizardUnit(xPos, yPos, 100, 1, 1, 'W', 5, faction, 100, "Wizard");
+                    Units[l] = unit;
+                }
+                else if(type == 2 && faction == 1)
+                {
+                    WizardUnit unit = new WizardUnit(xPos, yPos, 100, 1, 1, 'w', 5, faction, 100, "Wizard");
+                    Units[l] = unit;
+                }
+                else if(faction == 2)
+                {
+                    WizardUnit unit = new WizardUnit(xPos, yPos, 100, 1, 1, 'O', 5, 2, 100, "Wizard");
                     Units[l] = unit;
                 }
             }
@@ -147,12 +162,12 @@ namespace Units
                 }
                 else if (bldingType == 1 && faction == 0)
                 {
-                    ResourceBuilding blding = new ResourceBuilding(xPos, yPos, 100,faction,'W',1000,50);
+                    ResourceBuilding blding = new ResourceBuilding(xPos, yPos, 100,faction,'G',1000,50);
                     buildings[k] = blding;
                 }
                 else if (bldingType == 1 && faction == 1)
                 {
-                    ResourceBuilding blding = new ResourceBuilding(xPos, yPos, 100, faction, 'w', 1000, 50);
+                    ResourceBuilding blding = new ResourceBuilding(xPos, yPos, 100, faction, 'g', 1000, 50);
                     buildings[k] = blding;
                 }
             }

@@ -24,7 +24,7 @@ namespace Units
         private void frmBattleSim_Load(object sender, EventArgs e)
         {
 
-            gameEngine = new GameEngine(0,20,20,6); //Create a new instance of the game engine class
+            gameEngine = new GameEngine(10,20,20,6); //Create a new instance of the game engine class
             lblMap.Text = gameEngine.Map.convertMap(); //Updates the map
             
             rtxUnitInfo.Text = gameEngine.getStats(gameEngine.Map.Units,gameEngine.Map.Buildings); //Updates the unit info
