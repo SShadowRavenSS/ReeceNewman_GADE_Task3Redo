@@ -12,6 +12,7 @@ namespace Units
         private Map map;
         int counter = 0;
         public Map Map { get => map; }
+        public int team1Resources = 0, team0Resources = 0;
         
         //Constructor for gameEngine
         public GameEngine(int numberOfUnits, int mapSizeX, int mapSizeY, int numOfBuildings)
@@ -92,7 +93,14 @@ namespace Units
                     Buildings.ResourceBuilding rblding = (Buildings.ResourceBuilding)bldings[p];
 
                     //calls the generate resource method
-                    rblding.GenerateResources();
+                    if (rblding.Faction == 0)
+                    {
+                        team0Resources += rblding.GenerateResources(); //Adds generated resources to the teams pool
+                    }
+                    else
+                    {
+                        team1Resources += rblding.GenerateResources(); //Adds generated resources to the teams pool
+                    }
                     
                 }
                 else
@@ -103,11 +111,32 @@ namespace Units
                     //checks if the building should be generating a unit
                     if(fblding.ProductionSpeed <= counter)
                     {
-                        //If so create a temp unit and save it in the map array after resizing it
-                        Unit temp = fblding.SpawnUnits();
-                        Array.Resize(ref map.units, map.Units.Length + 1);
-                        map.Units[map.Units.Length - 1] = temp;
-                        resetCounter = true; //Set boolean to reset counter
+
+                        if(fblding.Faction == 0)
+                        {
+                            if(team0Resources >= 5)
+                            {
+                                //If so create a temp unit and save it in the map array after resizing it
+                                Unit temp = fblding.SpawnUnits();
+                                Array.Resize(ref map.units, map.Units.Length + 1);
+                                map.Units[map.Units.Length - 1] = temp;
+                                resetCounter = true; //Set boolean to reset counter
+                                team0Resources -= 5; //Pay the resource cost of producing the units
+                            }
+                            
+                        }
+                        else
+                        {
+                            if (team1Resources >= 5)
+                            {
+                                //If so create a temp unit and save it in the map array after resizing it
+                                Unit temp = fblding.SpawnUnits();
+                                Array.Resize(ref map.units, map.Units.Length + 1);
+                                map.Units[map.Units.Length - 1] = temp;
+                                resetCounter = true; //Set boolean to reset counter
+                                team1Resources -= 5; //Pay the resource cost of producing the units
+                            }
+                        }
                     }
                     else
                     {

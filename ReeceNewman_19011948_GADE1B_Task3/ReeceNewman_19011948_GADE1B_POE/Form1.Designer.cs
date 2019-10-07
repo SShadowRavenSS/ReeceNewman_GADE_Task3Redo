@@ -39,6 +39,8 @@
             this.lblTimerText = new System.Windows.Forms.Label();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblTeam1Resources = new System.Windows.Forms.Label();
+            this.lblTeam0Resources = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnStart
@@ -132,11 +134,31 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // lblTeam1Resources
+            // 
+            this.lblTeam1Resources.AutoSize = true;
+            this.lblTeam1Resources.Location = new System.Drawing.Point(234, 44);
+            this.lblTeam1Resources.Name = "lblTeam1Resources";
+            this.lblTeam1Resources.Size = new System.Drawing.Size(35, 13);
+            this.lblTeam1Resources.TabIndex = 9;
+            this.lblTeam1Resources.Text = "label1";
+            // 
+            // lblTeam0Resources
+            // 
+            this.lblTeam0Resources.AutoSize = true;
+            this.lblTeam0Resources.Location = new System.Drawing.Point(234, 57);
+            this.lblTeam0Resources.Name = "lblTeam0Resources";
+            this.lblTeam0Resources.Size = new System.Drawing.Size(35, 13);
+            this.lblTeam0Resources.TabIndex = 10;
+            this.lblTeam0Resources.Text = "label2";
+            // 
             // frmBattleSim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTeam0Resources);
+            this.Controls.Add(this.lblTeam1Resources);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.lblTimerText);
@@ -166,6 +188,8 @@
         private System.Windows.Forms.Label lblTimerText;
         private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblTeam1Resources;
+        private System.Windows.Forms.Label lblTeam0Resources;
     }
 }
 

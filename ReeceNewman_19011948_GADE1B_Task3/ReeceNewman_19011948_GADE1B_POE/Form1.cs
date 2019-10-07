@@ -28,7 +28,9 @@ namespace Units
             lblMap.Text = gameEngine.Map.convertMap(); //Updates the map
             
             rtxUnitInfo.Text = gameEngine.getStats(gameEngine.Map.Units,gameEngine.Map.Buildings); //Updates the unit info
-            
+            lblTeam0Resources.Text = Convert.ToString("Team 0 Resources: " + gameEngine.team0Resources); //Updates teamResources
+            lblTeam1Resources.Text = Convert.ToString("Team 1 Resources: " + gameEngine.team1Resources); //Updates teamResources
+
         }
 
         
@@ -45,6 +47,8 @@ namespace Units
             lblMap.Text = gameEngine.Map.convertMap(); //Updates map display on the form
             lblTimer.Text = Convert.ToString(Convert.ToInt32(lblTimer.Text) + 1); //updates the timer on the form
             rtxUnitInfo.Text = gameEngine.getStats(gameEngine.Map.Units, gameEngine.Map.Buildings); //updates units statson the form
+            lblTeam0Resources.Text = Convert.ToString("Team 0 Resources: " + gameEngine.team0Resources); //Updates teamResources
+            lblTeam1Resources.Text = Convert.ToString("Team 1 Resources: " + gameEngine.team1Resources); //Updates teamResources
         }
 
         private void btnPause_Click(object sender, EventArgs e)

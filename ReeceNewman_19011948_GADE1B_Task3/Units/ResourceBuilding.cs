@@ -62,8 +62,10 @@ namespace Buildings
         }
 
         //method that generates resources if the building still has anu left to generate
-        public void GenerateResources()
+        public int GenerateResources()
         {
+            int amountProduced = 0;
+
             //check to make sure there are still resources left
             if(resourcePoolRemaining != 0)
             {
@@ -72,15 +74,20 @@ namespace Buildings
                 {
                     //adds the pool if it is less than zero and makes pool equal zero
                     generatedResources += resourcePoolRemaining;
+                    amountProduced += resourcePoolRemaining;
                     resourcePoolRemaining = 0;                  
                 }
                 else
                 {
                     //adds the per round production if it is more than zero and subtracts the amount from the pool
                     generatedResources += resourcesPerRound;
+                    amountProduced += resourcesPerRound;
                     resourcePoolRemaining -= resourcesPerRound;
                 }
             }
+
+            return amountProduced;
+
         }
 
         //method that saves the building into the file
