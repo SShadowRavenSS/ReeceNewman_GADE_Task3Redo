@@ -53,7 +53,8 @@ namespace Units
                         }
                         else if (unit[i].Faction != closest.Faction) //If the unit is not part of the same team
                         {
-                            unit[i].combat(closest); //Do combat
+                            WizardUnit temp = (WizardUnit)unit[i];
+                            temp.aoeCombat(unit);//Do combat
                             map.populateMap(); //Refreh map
                         }
                     }

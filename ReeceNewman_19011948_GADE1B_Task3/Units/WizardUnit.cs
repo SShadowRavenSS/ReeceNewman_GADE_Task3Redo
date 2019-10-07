@@ -27,6 +27,20 @@ namespace Units
             fs.Close();
         }
 
+        //Method that attacks all units within range
+        public void aoeCombat(Unit[] units)
+        {
+            //loops through all the units in the array
+            for (int i = 0; i < units.Length; i++)
+            {
+                //checks if they are in range and then attacks
+                if(this.attackingRange(units[i]) == true)
+                {
+                    combat(units[i]);
+                }
+            }
+        }
+
         //Method that generates and returns a formatted string for saving purposes
         private string saveFormatter()
         {
